@@ -1,1 +1,7 @@
-//placeholder for initial commit
+class Card {
+  constructor(id, question, [answers], correctAnswer) {
+
+  }
+}
+
+module.exports = Card;
