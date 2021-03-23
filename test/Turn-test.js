@@ -25,8 +25,13 @@ describe("Turn", function() {
     expect(turn.card).to.equal("What's the best pink, long-legged bird?");
   });
 
-  it("should return the guess", function() {
+  it("should be able to return the guess", function() {
     const turn = new Turn("2004", "When did Facebook launch?");
     expect(turn.returnGuess()).to.equal("2004");
-  })
+  });
+
+  it("should be able to return the Card", function() {
+    const turn = new Turn("philosophy", "A doctor with a PhD is a doctor of what?");
+    expect(turn.returnCard()).to.equal("A doctor with a PhD is a doctor of what?");
+  });
 });
