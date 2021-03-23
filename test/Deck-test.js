@@ -11,7 +11,7 @@ describe("Deck", function() {
     expect(Deck).to.be.a("function");
   });
 
-  it("should be an instance of Deck", function() {
+  it("should instantiate with an array of cards", function() {
     const card1 = new Card(3, "What's the best pink, long-legged bird?", ["pigeon", "penguin", "flamingo"], "flamingo");
     const card2 = new Card(6, "When did Facebook launch?", ["2004", "1998", "2008"], "2004");
     const card3 = new Card(19, "A doctor with a PhD is a doctor of what?", ["philosophy", "science", "math"]);
