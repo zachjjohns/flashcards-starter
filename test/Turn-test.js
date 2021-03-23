@@ -24,4 +24,9 @@ describe("Turn", function() {
     const turn = new Turn("flamingo", "What's the best pink, long-legged bird?");
     expect(turn.card).to.equal("What's the best pink, long-legged bird?");
   });
+
+  it("should return the guess", function() {
+    const turn = new Turn("2004", "When did Facebook launch?");
+    expect(turn.returnGuess()).to.equal("2004");
+  })
 });
