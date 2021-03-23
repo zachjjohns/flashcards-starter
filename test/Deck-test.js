@@ -7,7 +7,7 @@ const Deck = require('../src/Deck');
 
 describe("Deck", function() {
 
-  it("should be a function", () {
+  it("should be a function", function() {
     expect(Deck).to.be.a("function");
   });
 
@@ -17,5 +17,5 @@ describe("Deck", function() {
     const card3 = new Card(19, "A doctor with a PhD is a doctor of what?", ["philosophy", "science", "math"]);
 
     const deck = new Deck([card1, card2, card3]);
-  })
-})
+  });
+});
