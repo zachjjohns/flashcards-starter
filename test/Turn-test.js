@@ -35,7 +35,24 @@ describe("Turn", function() {
   });
 
   it("should be able to return the Card", function() {
-    const turn = new Turn("philosophy", "A doctor with a PhD is a doctor of what?");
-    expect(turn.returnCard()).to.equal("A doctor with a PhD is a doctor of what?");
+    const card = new Card(19, "A doctor with a PhD is a doctor of what?", ["philosophy", "science", "math"]);
+    const turn = new Turn("philosophy", card);
+    expect(turn.returnCard()).to.equal(card);
+  });
+
+  it("should evaluate if a guess is correct or incorrect", function() {
+    const card = new Card(22, "What's Zach's favorite color?", ["blue", "pink", "orange"], "blue");
+    const correctTurn = new Turn("blue", card);
+    const incorrectTurn = new Turn("orange", card);
+    expect(correctTurn.evaluateGuess()).to.equal(true);
+    expect(incorrectTurn.evaluateGuess()).to.equal(false);
+  });
+
+  it("should let the user know if their guess was correct/incorrect", function() {
+    const card = new Card(24, "What's Zach's favorite food?", ["grilled cheese", "hot wings", "pears"], "hot wings");
+    const correctTurn = new Turn("hot wings", card);
+    const incorrectTurn = new Turn("pears", card);
+    expect(correctTurn.giveFeedback()).to.equal("correct!");
+    expect(incorrectTurn.giveFeedback()).to.equal("incorrect!");
   });
 });
