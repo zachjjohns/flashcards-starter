@@ -38,19 +38,24 @@ describe("Round", () => {
     expect(round.returnCurrentCard()).to.equal(card1);
   });
 
-  it("should start a new Turn when a guess is made", () => {
+  it("should start a new Turn and go to the next card when a guess is made", () => {
     round.takeTurn("flamingo");
     expect(turn).to.be.an.instanceof(Turn);
-  });
-
-  it("should add to turn count with each guess made", () => {
-    round.takeTurn("flamingo");
     expect(round.turns).to.equal(1)
-
+    expect(round.currentCard).to.deep.equal(card2);
   });
 
-  it("should change to the next card after a guess", () => {
-    round.takeTurn("flamingo");
-    expect(round.currentCard).to.deep.equal(card2);
+  // it("should add to turn count with each guess made", () => {
+  //   round.takeTurn("flamingo");
+
+  // });
+
+  // it("should change to the next card after a guess", () => {
+  //   round.takeTurn("flamingo");
+  // });
+
+  it("should save any incorrect guesses", () => {
+    round.takeTurn("penguin");
+    expect(round.incorrect).to.deep.equal([card1.id]);
   });
 });
