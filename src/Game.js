@@ -1,5 +1,6 @@
 const data = require('./data');
 const prototypeQuestions = data.prototypeData;
+console.log(prototypeQuestions);
 const util = require('./util');
 
 class Game {

@@ -41,5 +41,16 @@ describe("Round", () => {
   it("should start a new Turn when a guess is made", () => {
     round.takeTurn("flamingo");
     expect(turn).to.be.an.instanceof(Turn);
-  })
-})
+  });
+
+  it("should add to turn count with each guess made", () => {
+    round.takeTurn("flamingo");
+    expect(round.turns).to.equal(1)
+
+  });
+
+  it("should change to the next card after a guess", () => {
+    round.takeTurn("flamingo");
+    expect(round.currentCard).to.deep.equal(card2);
+  });
+});
