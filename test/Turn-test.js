@@ -25,7 +25,7 @@ describe("Turn", function() {
   it("should store a Card object for the current card in play", function() {
     const card = new Card(3, "What's the best pink, long-legged bird?", ["pigeon", "penguin", "flamingo"], "flamingo");
     const turn = new Turn("flamingo", card);
-    expect(turn.card).to.deep.equal({id: 3, question:"What's the best pink, long-legged bird?", answers:["pigeon", "penguin", "flamingo"], correctAnswer:"flamingo"});
+    expect(turn.card).to.deep.equal({id: 3, question: "What's the best pink, long-legged bird?", answers: ["pigeon", "penguin", "flamingo"], correctAnswer: "flamingo"});
   });
 
   it("should be able to return the guess", function() {
