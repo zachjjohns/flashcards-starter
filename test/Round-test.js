@@ -59,4 +59,11 @@ describe("Round", () => {
     round.takeTurn("2008");
     expect(round.calculatePercentCorrect()).to.equal(50);
   });
+
+  it("should inform user when the round is over", () => {
+    round.takeTurn("flamingo");
+    round.takeTurn("2008");
+    round.takeTurn("philosophy");
+    expect(round.endRound()).to.equal(`** Round over! ** You answered ${round.calculatePercentCorrect()}% of the questions correctly!`);
+  })
 });

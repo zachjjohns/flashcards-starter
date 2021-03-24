@@ -3,7 +3,6 @@ const Turn = require("./Turn");
 class Round {
   constructor(deck) {
     this.deck = deck.cards;
-    // this.currentCard = deck.cards[0];
     this.turns = 0;
     this.incorrect = [];
   }
@@ -32,6 +31,11 @@ class Round {
     }
   }
 
+  endRound() {
+    const messageToUser = `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
+    console.log(messageToUser);
+    return messageToUser;
+  }
 }
 
 module.exports = Round;
