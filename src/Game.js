@@ -21,7 +21,16 @@ class Game {
   }
 
   start() {
-
+    let cards = []
+    prototypeQuestions.forEach(function(cardDetails) {
+      const card = new Card(
+        cardDetails.id,
+        cardDetails.question,
+        cardDetails.answers,
+        cardDetails.correctAnswer,
+      );
+      cards.push(card);
+    })
   }
 }
 
