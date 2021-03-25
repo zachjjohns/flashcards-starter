@@ -25,7 +25,7 @@ class Round {
 
   calculatePercentCorrect() {
     if (this.incorrect.length > 0) {
-      return (100 * (1 - this.incorrect.length / this.turns));
+      return (100 * (1 - this.incorrect.length / this.turns).toFixed(4));
     } else {
       return '100!'
     }
