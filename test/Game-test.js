@@ -20,9 +20,4 @@ describe ("Game", () => {
   it("should start with a null currentRound", () => {
     expect(game.currentRound).to.equal(null);
   });
-
-  // it("should be able to start a Round", () => {
-  //   game.start();
-  //   expect(game.currentRound).to.be.an.instanceOf(Round);
-  // });
 });

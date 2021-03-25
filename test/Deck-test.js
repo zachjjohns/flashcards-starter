@@ -2,10 +2,9 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Card = require('../src/Card');
-const Turn = require('../src/Turn');
 const Deck = require('../src/Deck');
 
-describe("Deck", function() {
+describe("Deck", () => {
   let card1, card2, card3, deck;  
   beforeEach(() => {
     card1 = new Card(3, "What's the best pink, long-legged bird?", ["pigeon", "penguin", "flamingo"], "flamingo");
@@ -14,15 +13,15 @@ describe("Deck", function() {
     deck = new Deck([card1, card2, card3]);
   });
 
-  it("should be a function", function() {
+  it("should be a function", () => {
     expect(Deck).to.be.a("function");
   });
 
-  it("should instantiate with an array of cards", function() {
+  it("should instantiate with an array of cards", () => {
     expect(deck).to.be.an.instanceof(Deck);
   });
 
-  it("should be able to count the number of cards in the deck", function() {
+  it("should be able to count the number of cards in the deck", () => {
     deck.countCards();
     expect(deck.countCards()).to.equal(3);
   });
