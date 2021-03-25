@@ -21,7 +21,8 @@ describe ("Game", () => {
     expect(game.currentRound).to.equal(null);
   });
 
-  //after we run start, make sure this.currentRound defined, etcetc
-  // does round have way to check data/Game instantiates correctly 
-
+  it("should be able to start a Round", () => {
+    game.start();
+    expect(game.currentRound).to.be.an.instanceOf(Round);
+  });
 })
