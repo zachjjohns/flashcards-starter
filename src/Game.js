@@ -30,7 +30,9 @@ class Game {
         cardDetails.correctAnswer,
       );
       cards.push(card);
-    })
+    });
+    const deck = new Deck(cards);
+    this.currentRound = new Round(deck);
   }
 }
 
