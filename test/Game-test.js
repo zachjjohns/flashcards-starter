@@ -21,9 +21,11 @@ describe ("Game", () => {
     expect(game).to.be.an.instanceOf(Game);
   });
 
-  it("should start with an undefined currentRound", () => {
-    expect(game.currentRound).to.equal(undefined);
+  it("should start with a null currentRound", () => {
+    expect(game.currentRound).to.equal(null);
   });
 
+  //after we run start, make sure this.currentRound defined, etcetc
+  // does round have way to check data/Game instantiates correctly 
 
 })
