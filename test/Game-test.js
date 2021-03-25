@@ -21,7 +21,7 @@ describe ("Game", () => {
     expect(game).to.be.an.instanceOf(Game);
   });
 
-  it("should keep track of the current round", () => {
+  it("should start with an undefined currentRound", () => {
     expect(game.currentRound).to.equal(undefined);
   });
 

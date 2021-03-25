@@ -20,16 +20,16 @@ class Game {
       util.main(round);
   }
 
+
+  //use .map
   start() {
-    let cards = [];
-    prototypeQuestions.forEach(cardDetails => {
-      const card = new Card(
+    let cards = prototypeQuestions.map(cardDetails => {
+      return new Card(
         cardDetails.id,
         cardDetails.question,
         cardDetails.answers,
         cardDetails.correctAnswer,
       );
-      cards.push(card);
     });
     const deck = new Deck(cards);
     this.currentRound = new Round(deck);
